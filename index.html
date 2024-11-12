@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail Page</title>
+
+    <!-- Swiper CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Bootstrap Icons CDN for social icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Add FontAwesome CDN for social icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .image{
+            overflow: hidden;
+            background-position: center;
+            object-fit: cover;
+        }
+        .product-gallery {
+            position: relative;
+            width: 100%;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding: 0px 12px;
+}
+
+        .product-thumbs .swiper-container {
+            margin-top: 15px;
+        }
+
+        .product-thumbs .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #000;  /* Button color */
+            z-index: 10; /* Make sure buttons are above content */
+        }
+
+        .swiper-slide img:hover {
+            /* transform: scale(1.1); */
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-links {
+    position: relative;
+    top: 18px;
+    font-size: 33px;
+}
+.social-links a {
+    color: #c4153d;
+    text-decoration: underline;
+    transition: .3s;
+    margin-right: 10px;
+}
+.social-links a:hover{
+    color: #d4c0c5;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="page-content py-5">
+        <div class="container">
+            <div class="row">
+                <div class="main-content">
+                    <div class="product product-single row">
+                        <!-- Product Gallery -->
+                        <div class="col-md-6 image">
+                            <div class="product-gallery">
+                                <!-- Main Swiper for image gallery -->
+                                <div class="swiper-container product-single-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="https://ecomclone.bigwebstore.xyz/uploads/1391490256.png" alt="Luxe RRR Recliner" class="product-image">
+                                            <i class="w-icon-zoom zoom-icon"></i>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="https://ecomclone.bigwebstore.xyz/uploads/748883646.png" alt="Luxe RRR Recliner" class="product-image">
+                                            <div class="zoom-icon">&#128269;</div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="https://ecomclone.bigwebstore.xyz/uploads/1449931934.png" alt="Luxe RRR Recliner" class="product-image">
+                                         
+                                        </div>
+                                    </div>
+                                    <!-- Swiper navigation buttons -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <a href="#" class="product-gallery-btn product-image-full">
+                                        <i class="fa-solid fa-compress zoom"></i>
+                                    </a>
+                                </div>
+
+                           
+                            </div>
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="col-md-6">
+                            <div class="product-container">
+                                <div class="product-title">Luxe RRR Recliner | Rocking, Recline, Rotate</div>
+                                <div class="price">₹16156 <span class="original-price">₹21510</span> <span class="discount">(25% OFF)</span></div>
+                                <div class="rating">⭐⭐⭐⭐ (3 Reviews)</div>
+                                <div class="description">Experience unparalleled comfort with the Luxe RRR Recliner! This premium recliner combines three amazing functions:</div>
+                                
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn" onclick="decrementQuantity()">-</button>
+                                    <input type="text" class="quantity-input" id="quantity" value="2">
+                                    <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+                                <button class="add-to-cart">ADD TO CART</button>
+
+                                </div>
+                                
+                                
+                                <div class="social-links">
+                                    <a href="#" class="social-icon social-facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon social-twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-icon social-pinterest"><i class="fab fa-pinterest"></i></a>
+                                    <a href="#" class="social-icon social-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="#" class="social-icon social-youtube"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Tabs -->
+                    <div class="tab-content">
+                        <div class="tab-pane" id="product-tab-description">
+                            Experience unparalleled comfort with the Luxe RRR Recliner! This premium recliner combines three amazing functions.
+                        </div>
+                        <div class="tab-pane" id="product-tab-specification">
+                            <p>test</p>
+                        </div>
+                        <div class="tab-pane" id="product-tab-reviews">
+                            <div class="ratings-wrapper">
+                                <div class="avg-rating-container">
+                                    <h4 class="avg-mark">3.3</h4>
+                                    <p class="text-dark">Average Rating</p>
+                                    <div class="ratings-container">
+                                        <div class="ratings-full">
+                                            <span class="ratings" style="width: 60%;"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Initialize Swiper for main product gallery
+        var swiperMain = new Swiper('.product-single-swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+                swiper: swiperThumbs // Ensure that swiperThumbs is linked to swiperMain
+            }
+        });
+    
+        // Initialize Swiper for thumbnails
+        var swiperThumbs = new Swiper('.product-thumbs', {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            loop: true,
+            slideToClickedSlide: true, // Enables thumbnail click to change main image
+        });
+
+
+    
+        function incrementQuantity() {
+            let quantity = document.getElementById('quantity');
+            quantity.value = parseInt(quantity.value) + 1;
+        }
+
+        function decrementQuantity() {
+            let quantity = document.getElementById('quantity');
+            if (parseInt(quantity.value) > 1) {
+                quantity.value = parseInt(quantity.value) - 1;
+            }
+        }
+ 
+    </script>
+    
+</body>
+
+</html>
